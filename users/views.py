@@ -5,7 +5,7 @@ from .models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import decorators, permissions
-import os 
+import os
 
 
 class RegisterView(generics.CreateAPIView):
@@ -16,10 +16,11 @@ class RegisterView(generics.CreateAPIView):
 
 @decorators.api_view(["GET"])
 @decorators.permission_classes([permissions.AllowAny])
-def test( request):
+def test(request):
     return Response("Hello world!")
+
 
 @decorators.api_view(["GET"])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def test_auth( request):
+def test_auth(request):
     return Response("test auth")
